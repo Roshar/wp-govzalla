@@ -9,6 +9,7 @@ if (!function_exists('covernews_get_posts')):
     function covernews_get_posts($number_of_posts, $category = '0')
     {
 
+
         $ins_args = array(
             'post_type' => 'post',
             'posts_per_page' => absint($number_of_posts),
@@ -106,7 +107,7 @@ if (!function_exists('covernews_get_excerpt')):
         $covernews_global_read_more_texts = covernews_get_option('global_read_more_texts');
 
         if(!empty($covernews_global_read_more_texts)){
-            $covernews_read_more = '<div class="aft-readmore-wrapper"><a href="' . get_permalink($post_id) . '" class="aft-readmore">' . $covernews_global_read_more_texts . '</a></div>';
+            $covernews_read_more = '<div class="aft-readmore-wrapper"><a href="' . get_permalink($post_id) . '" class="aft-readmore">' . 'Подробнее' . '</a></div>';
         }
         
 

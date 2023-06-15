@@ -140,7 +140,7 @@ if (!function_exists('covernews_post_item_tag')):
             $tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', 'covernews'));
             if ($tags_list) {
                 /* translators: 1: list of tags. */
-                printf('<span class="tags-links">' . esc_html('Tags: %1$s') . '</span>', $tags_list); // WPCS: XSS OK.
+                printf('<span class="tags-links">' . esc_html(' #%1$s') . '</span>', $tags_list); // WPCS: XSS OK.
             }
         }
         }

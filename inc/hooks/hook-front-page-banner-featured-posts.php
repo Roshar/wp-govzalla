@@ -15,7 +15,21 @@ if (!function_exists('covernews_banner_featured_posts')):
                     <?php
                     $covernews_featured_category = covernews_get_option('select_featured_news_category');
                     $covernews_number_of_featured_news = covernews_get_option('number_of_featured_news');
-                    $featured_posts = covernews_get_posts($covernews_number_of_featured_news, $covernews_featured_category);
+                    //$featured_posts = covernews_get_posts($covernews_number_of_featured_news, $covernews_featured_category);
+
+                    $args = array(
+//                        'post_type' => 'post',
+//                        'post_status' => 'publish',
+                            'tag_id' => 21,
+//                        'tag_in' => array(32),
+                        'posts_per_page' => 5,
+                    );
+
+
+
+                    //                $number_of_posts = covernews_get_option('number_of_trending_slides');
+                    $featured_posts = new WP_Query( $args );
+
                     if ($featured_posts->have_posts()) :
                         while ($featured_posts->have_posts()) :
                             $featured_posts->the_post();

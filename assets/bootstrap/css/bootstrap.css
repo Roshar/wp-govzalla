@@ -9,6 +9,8 @@
 
 /* Rashid style*/
 
+
+
 .site-branding__img-box {
   max-width:150px;
   border:1px solid red!important;
@@ -16,6 +18,13 @@
 
 .site-branding__img-box img {
   width:150px
+}
+
+.tags-links a {
+  background-color:red!important;
+}
+#mado{
+  color:blue!important;
 }
 
 

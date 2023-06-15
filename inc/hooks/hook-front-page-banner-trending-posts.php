@@ -15,9 +15,22 @@ if (!function_exists('covernews_banner_trending_posts')):
                 <?php
                 $covernews_trending_slider_title = covernews_get_option('trending_slider_title');
                 $covernews_nav_control_class = empty($covernews_trending_slider_title) ? 'no-section-title' : '';
-                $category = covernews_get_option('select_trending_news_category');
-                $number_of_posts = covernews_get_option('number_of_trending_slides');
-                $all_posts = covernews_get_posts($number_of_posts, $category);
+//                $category = covernews_get_option('select_trending_news_category');
+                $category = covernews_get_option('events');
+
+                $args = array(
+                        'post_type' => 'post',
+                        'post_status' => 'publish',
+//                      'category__in' => array(5),
+                        'category_name' => 'events',
+                        'posts_per_page' => 7,
+                );
+
+
+
+//                $number_of_posts = covernews_get_option('number_of_trending_slides');
+                $all_posts = new WP_Query( $args );
+//                $all_posts = covernews_get_posts($number_of_posts, $category);
                 $count = 1;
                 ?>
                 <div class="trending-posts-carousel">

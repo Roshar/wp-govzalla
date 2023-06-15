@@ -19,7 +19,7 @@ get_header(); ?>
                             <header class="header-title-wrapper">
                                 <h1 class="page-title"><?php
                                     /* translators: %s: search query. */
-                                    printf(esc_html__('Search Results for: %s', 'covernews'), '<span>' . get_search_query() . '</span>');
+                                    printf(esc_html__('Результаты поиска: %s', 'covernews'), '<span>' . get_search_query() . '</span>');
                                     ?></h1>
                             </header><!-- .header-title-wrapper -->
                             <div class="row">

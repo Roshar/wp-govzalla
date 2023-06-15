@@ -401,6 +401,12 @@ blockquote blockquote:after {
     }
 }
 
+
+
+.post-item-metadata a.tags-links {
+    background-color: #0a4b78!important;
+}
+
 blockquote:before {
     content: "\201C";
     position: absolute;
@@ -3724,7 +3730,8 @@ body.default .slider-figcaption .post-description .aft-readmore-wrapper a.aft-re
 .figure-categories .cat-links a.category-color-3,
 .full-plus-list .spotlight-post:first-of-type .figure-categories .cat-links a.covernews-categories.category-color-3
 {
-    background-color: #0076b5;
+    background-color: #7e0926;
+    color:white;
 }
 
 .trending-story .figure-categories .cat-links a.covernews-categories.category-color-3,
@@ -5290,7 +5297,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"],
 .site-content .search-form .search-submit,
 .site-footer .search-form .search-submit,
 .tagcloud a:hover {
-    background: #bb1919;
+    background: #496ba8;
     color: #fff;
 }
 .tagcloud a:visited:hover {

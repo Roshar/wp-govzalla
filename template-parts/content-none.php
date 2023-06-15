@@ -11,7 +11,7 @@
 
 <section class="no-results not-found col-sm-12">
 	<header class="header-title-wrapper">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'covernews' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Ничего не найдено', 'covernews' ); ?></h1>
 	</header><!-- .header-title-wrapper -->
 
 	<div class="page-content">
@@ -35,7 +35,7 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'covernews' ); ?></p>
+			<p><?php esc_html_e( 'По вашему запросу ничего не найдено', 'covernews' ); ?></p>
 			<?php
 				get_search_form();
 

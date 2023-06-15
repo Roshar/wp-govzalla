@@ -44,14 +44,13 @@ if (!function_exists('covernews_front_page_main_section_1')) :
                                 <div class="main-slider full-slider-mode">
                                     <?php
 
-                                    $slider_posts = new WP_Query( array('tag__in' => array(38)) );
-//
-//                                    $slider_posts = covernews_get_posts($covernews_number_of_slides, $covernews_slider_category);
+                                    $slider_posts = covernews_get_posts($covernews_number_of_slides, $covernews_slider_category);
                                     if ($slider_posts->have_posts()) :
                                         while ($slider_posts->have_posts()) : $slider_posts->the_post();
                                             global $post;
                                             $covernews_post_id = $post->ID;
                                             $thumbnail_size = 'large';
+//
                                             ?>
                                             <figure class="slick-item">
                                                 <div class="data-bg-hover data-bg-slide read-bg-img">
@@ -66,8 +65,10 @@ if (!function_exists('covernews_front_page_main_section_1')) :
                                                         </div>
                                                         <div class="title-heading">
                                                             <h3 class="article-title slide-title">
-                                                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                                                <a href="<?php the_permalink(); ?>"><?php echo short_title(the_title('','Читать',false)) ?> <span class="title_read_more">Читать подробнее</span></a>
+
                                                             </h3>
+
                                                         </div>
                                                         <div class="grid-item-metadata grid-item-metadata-1">
                                                             <?php covernews_post_item_meta(); ?>
@@ -97,7 +98,7 @@ if (!function_exists('covernews_front_page_main_section_1')) :
                                     <h4 class="header-after1">
                                         <span class="header-after <?php echo esc_attr($color_class); ?>">
                                             
-                                            <?php echo apply_filters( 'the_title', 'Год педагога и наставника'); ?>
+                                            <?php echo apply_filters( 'the_title', 'Анонсы'); ?>
                                         </span>
                                     </h4>
                                 <?php endif; ?>
@@ -105,8 +106,14 @@ if (!function_exists('covernews_front_page_main_section_1')) :
 
                                     <?php
 
-                                    $featured_posts = covernews_get_posts($covernews_number_of_featured_news, $covernews_editors_picks_category);
+                                    $args = array(
+//                                        'tag__in' => array(21),
+                                        'category_name' => 'anounce',
+                                        'posts_per_page' => '2',
+                                    );
 
+                                    $featured_posts = new WP_Query($args);
+//                                    $featured_posts = covernews_get_posts($covernews_number_of_featured_news);
                                     if ($featured_posts->have_posts()) :
                                         while ($featured_posts->have_posts()) :
                                             $featured_posts->the_post();
@@ -162,7 +169,7 @@ if (!function_exists('covernews_front_page_main_section_1')) :
                                 <?php if ($covernews_trending_slider_title): ?>
                                     <h4 class="header-after1">
                                     <span class="header-after <?php echo esc_attr($color_class); ?>">
-                                         <?php echo apply_filters( 'the_title', $covernews_trending_slider_title); ?>
+                                         <?php echo apply_filters( 'the_title', 'Последние новости'); ?>
                                     </span>
                                     </h4>
                                 <?php endif; ?>
@@ -192,7 +199,8 @@ if (!function_exists('covernews_front_page_main_section_1')) :
 
                                 <h4 class="header-after1 ">
                                 <span class="header-after <?php echo esc_attr($color_class); ?>">
-                                    <?php echo apply_filters( 'the_title', $covernews_featured_news_title); ?>
+<!--                                    --><?php //echo apply_filters( 'the_title', $covernews_featured_news_title); ?>
+                                    <?php echo apply_filters( 'the_title', 'Год педагога и наставника'); ?>
                                 </span>
 
                                 </h4>

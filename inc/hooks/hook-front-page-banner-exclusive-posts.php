@@ -73,4 +73,4 @@ if (!function_exists('covernews_banner_exclusive_posts')):
     }
 endif;
 
-//add_action('covernews_action_banner_exclusive_posts', 'covernews_banner_exclusive_posts', 10);
+add_action('covernews_action_banner_exclusive_posts', 'covernews_banner_exclusive_posts', 10);

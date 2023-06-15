@@ -120,16 +120,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
+                    <div class="footer_own" style="font-size: 12px">
                     <?php $covernews_copy_right = covernews_get_option('footer_copyright_text'); ?>
                     <?php if (!empty($covernews_copy_right)): ?>
                         <?php echo esc_html($covernews_copy_right); ?>
                     <?php endif; ?>
                     <?php $covernews_theme_credits = covernews_get_option('hide_footer_copyright_credits'); ?>
                     <?php if ($covernews_theme_credits != 1): ?>
+
                         <span class="sep"> | </span>
+                        <span>Все права защищены. <br>При использовании материалов сайта активная ссылка на сайт https://www.govzalla.ru обязательна.</span>
+                        <br><span>При разработке сайта использовалась тема от команды разработчиков <a href="https://afthemes.com/products/covernews/">AF themes</a></span>
+                    </div>
+
                         <?php
                         /* translators: 1: Theme name, 2: Theme author. */
-                        printf(esc_html__('%1$s by %2$s.', 'covernews'), '<a href="https://afthemes.com/products/covernews/">CoverNews</a>', 'AF themes');
+
+//                        printf(esc_html__('%1$s by %2$s.', 'covernews'), '<a href="https://afthemes.com/products/covernews/">CoverNews</a>', 'AF themes');
                         ?>
                     <?php endif; ?>
                 </div>

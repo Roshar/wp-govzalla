@@ -39,9 +39,11 @@ if ( 1 == $enable_preloader ):
 <?php endif; ?>
 
 <div id="page" class="site">
+
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'covernews'); ?></a>
 
 <?php covernews_get_block('header-layout-1'); ?>
+
     <div id="content" class="container">
 <?php
     do_action('covernews_action_get_breadcrumb');

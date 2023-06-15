@@ -161,7 +161,35 @@ if (!function_exists('covernews_fonts_url')):
         }
         return $fonts_url;
     }
+
 endif;
+
+function short_title($title) {
+
+    $res = mb_substr($title,0,100);
+    return $res.' ...';
+}
+add_action( 'init', 'short_title', 20 );
+
+
+
+
+
+
+
+/**
+ * фукция для обрезки
+ */
+
+
+    /**
+     * Return short title.
+     *
+     * @since 1.0.0
+     * @return string short title.
+     */
+
+
 
 
 /**

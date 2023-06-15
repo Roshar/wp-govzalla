@@ -264,7 +264,7 @@ if (!function_exists('covernews_get_breadcrumb')) :
         $select_breadcrumbs = covernews_get_option('select_breadcrumb_mode');
 
         ?>
-        <div class="em-breadcrumbs font-family-1 covernews-breadcrumbs">
+        <div id="govzalla-breadcrumbs" class="em-breadcrumbs covernews-breadcrumbs govzalla-breadcrumbs">
             <div class="row">
                 <?php
                 if ((function_exists('yoast_breadcrumb')) && ($select_breadcrumbs == 'yoast')) {
@@ -398,8 +398,8 @@ if (!function_exists('covernews_numeric_pagination')) :
     {
         the_posts_pagination(array(
             'mid_size' => 3,
-            'prev_text' => __( 'Previous', 'covernews' ),
-            'next_text' => __( 'Next', 'covernews' ),
+            'prev_text' => __( 'Пред.', 'covernews' ),
+            'next_text' => __( 'След.', 'covernews' ),
         ));
     }
 
